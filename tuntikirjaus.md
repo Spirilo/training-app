@@ -1,0 +1,1 @@
+14.9 Suunnittelu ja alustus 5 h 
