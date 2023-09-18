@@ -9,7 +9,7 @@ const runMigrations = async () => {
     migrations: {
       glob: 'migrations/*.js',
     },
-    storage: new SequelizeStorage({ sequelize, tableName: 'migrations'}),
+    storage: new SequelizeStorage({ sequelize, tableName: 'migrations' }),
     context: sequelize.getQueryInterface(),
     logger: console,
   })
