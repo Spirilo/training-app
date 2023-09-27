@@ -1,7 +1,10 @@
+import Main from "./components/Main";
+
 function App() {
   return (
     <div>
-     <p>Start</p> 
+      <p>Fitflow</p>
+      <Main />
     </div>
   );
 }
