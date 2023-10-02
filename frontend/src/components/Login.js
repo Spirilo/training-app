@@ -7,9 +7,6 @@ import { loginUser } from "../reducers/userReducer"
 const Login = () => {
   const { ...username } = useField('username')
   const { ...password } = useField('password')
-  const user = useSelector(state => state.user)
-
-  console.log(user)
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
