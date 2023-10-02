@@ -1,12 +1,18 @@
 import { useNavigate } from "react-router"
+import { useDispatch, useSelector } from 'react-redux'
+
 import { useField } from "../hooks"
-import loginService from '../services/login'
+import { loginUser } from "../reducers/userReducer"
 
 const Login = () => {
   const { ...username } = useField('username')
   const { ...password } = useField('password')
+  const user = useSelector(state => state.user)
+
+  console.log(user)
 
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const login = async (ev) => {
     ev.preventDefault()
@@ -14,8 +20,8 @@ const Login = () => {
       username: username.value,
       password: password.value
     }
-    const data = await loginService.login(user)
-    console.log(data)
+    dispatch(loginUser(user))
+    
     navigate('/')
   }
 
