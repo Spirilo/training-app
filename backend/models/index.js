@@ -3,7 +3,7 @@ const UserInfo = require('./userInfo')
 const Team = require('./team')
 const Membership = require('./membership')
 const Training = require('./training')
-const { default: Session } = require('./session')
+const Session = require('./session')
 
 User.hasOne(UserInfo)
 UserInfo.belongsTo(User)

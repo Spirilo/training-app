@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
 
 const { PORT } = require('./util/config')
@@ -8,6 +9,7 @@ const usersRouter = require('./controllers/users')
 const loginRouter = require('./controllers/login')
 const userInfoRouter = require('./controllers/userInfos')
 
+app.use(cors())
 app.use(express.json())
 
 app.use('/api/users', usersRouter)

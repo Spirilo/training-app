@@ -8,4 +8,6 @@
 19.9
   Modelit ja migraatiot teams, memberships ja training 1 h
 27.9
-  Router ja muutama komponentti/linkki 1 h
+  Router ja muutama komponentti/linkki fronttiin 1 h
+  Session model ja migraatio 0.5 h
+

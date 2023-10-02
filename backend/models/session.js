@@ -12,7 +12,7 @@ Session.init({
   },
   user_id: {
     type: DataTypes.INTEGER,
-    references: { model: 'user', key: 'id' }
+    references: { model: 'users', key: 'id' }
   },
   token: {
     type: DataTypes.INTEGER,
@@ -25,4 +25,4 @@ Session.init({
   modelName: 'session'
 })
 
-export default Session
+module.exports = Session
