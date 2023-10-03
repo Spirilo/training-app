@@ -4,13 +4,12 @@ import Login from "./components/Login";
 
 function App() {
   const user = useSelector(state => state.user)
-
   return (
     <div>
     {user === null  ? 
       <Login />
     :
-      <Main />
+      <Main user={user} />
     }
     </div>
   )
