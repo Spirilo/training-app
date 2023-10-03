@@ -17,7 +17,7 @@ Training.init({
   },
   type: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
   },
   duration: {
     type: DataTypes.INTEGER,
