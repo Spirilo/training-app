@@ -1,9 +1,11 @@
 const express = require('express')
+require('express-async-errors')
 const cors = require('cors')
 const app = express()
 
 const { PORT } = require('./util/config')
 const { connectToDatabase } = require('./util/db')
+const { errorHandler } = require('./util/middleware')
 
 const usersRouter = require('./controllers/users')
 const loginRouter = require('./controllers/login')
@@ -17,6 +19,8 @@ app.use('/api/users', usersRouter)
 app.use('/api/login', loginRouter)
 app.use('/api/userinfo', userInfoRouter)
 app.use('/api/training', trainingRouter)
+
+app.use(errorHandler)
 
 const start = async () => {
   await connectToDatabase()

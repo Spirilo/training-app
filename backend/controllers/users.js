@@ -32,9 +32,11 @@ router.get('/:username', async (req, res) => {
 
 router.post('/', async (req, res) => {
   const { username, password } = req.body
-  console.log(username, password)
   
   const saltRounds = 10
+  if (!password) {
+    return res.status(400).send({ error: 'Password missing!' })
+  }
   const passwordHash = await bcrypt.hash(password, saltRounds)
 
   const user = await User.create({ username, password: passwordHash })
