@@ -15,3 +15,8 @@
   Login formi ja login frontissa 2 h
   Redux ja toolkit, store ja reducer loginille 2 h
   Yhden henkilön haku ja raakaveto käyttäjätiedoista 1 h
+3.10
+  Komponentit treeneillä ja form 1 h
+  Router treeneille ja post 1 h
+  Error käsittelyä eri erroreille 2 h
+  Käyttäjätietojen lisäys frontin puolella (kesken) 2 h

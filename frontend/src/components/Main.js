@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import { setUser } from '../reducers/userReducer'
 import TrainingList from './TrainingList'
 import TrainingForm from './TrainingForm'
+import UserInfoForm from './UserInfoForm'
 
 const Main = ({ user }) => {
   const dispatch = useDispatch()
@@ -31,6 +32,7 @@ const Main = ({ user }) => {
         <Route path='/teams' element={<TeamList />} />
         <Route path='/traininglist' element={<TrainingList />} />
         <Route path='/addtraining' element={<TrainingForm />} />
+        <Route path='/userinfo' element={<UserInfoForm />} />
       </Routes>
     </div>
   )
