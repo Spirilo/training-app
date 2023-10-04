@@ -5,10 +5,10 @@ import { useField } from "../hooks"
 import { addUserInfo } from "../reducers/userReducer"
 
 const UserInfoForm = () => {
-  const { ...name } = useField('name')
-  const { ...age } = useField('age')
-  const { ...city} = useField('city')
-  const { ...bio} = useField('bio')
+  const name = useField('name')
+  const age = useField('age')
+  const city = useField('city')
+  const bio = useField('bio')
 
   const navigate = useNavigate()
   const dispatch = useDispatch()

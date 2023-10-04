@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router"
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import { useField } from "../hooks"
 import { loginUser } from "../reducers/userReducer"
 
 const Login = () => {
-  const { ...username } = useField('username')
-  const { ...password } = useField('password')
+  const username = useField('username')
+  const password = useField('password')
 
   const navigate = useNavigate()
   const dispatch = useDispatch()

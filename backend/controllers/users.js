@@ -22,10 +22,14 @@ router.get('/:username', async (req, res) => {
     where: {
       username: req.params.username
     },
-    include: {
+    include: [{
       model: UserInfo,
       attributes: { exclude: ['id', 'userId']}
-    }
+    },
+    {
+      model: Training,
+      attributes: { exclude: ['userId']}
+    }]
   })
   return res.json(user)
 })

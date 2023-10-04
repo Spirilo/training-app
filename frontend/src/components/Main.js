@@ -30,7 +30,7 @@ const Main = ({ user }) => {
         <Route path='/' element={<About />} />
         <Route path='/user' element={<UserPage />} />
         <Route path='/teams' element={<TeamList />} />
-        <Route path='/traininglist' element={<TrainingList />} />
+        <Route path='/traininglist' element={<TrainingList user={user} />} />
         <Route path='/addtraining' element={<TrainingForm />} />
         <Route path='/userinfo' element={<UserInfoForm />} />
       </Routes>

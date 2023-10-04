@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useSelector } from "react-redux"
 
-import UserInfoForm from './UserInfoForm'
-
 const UserPage = () => {
   const user = useSelector(state => state.user)
 

@@ -1,13 +1,8 @@
 import axios from "axios"
 
+import token from "../utils/token"
+
 const baseUrl = 'http://localhost:3001/api/userinfo'
-
-let token
-
-const setToken = userToken => {
-  token = `Bearer ${userToken}`
-}
-
 
 const addInfo = async info => {
   const config = {
@@ -17,4 +12,4 @@ const addInfo = async info => {
   await axios.post(baseUrl, info, config)
 }
 
-export default { addInfo, setToken }
+export default { addInfo }

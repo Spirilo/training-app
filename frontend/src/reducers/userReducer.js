@@ -3,6 +3,9 @@ import { createSlice } from "@reduxjs/toolkit"
 import loginService from '../services/login'
 import userService from '../services/user'
 import userInfoService from '../services/userInfo'
+import trainingService from '../services/training'
+
+import tokenFunc from '../utils/token'
 
 const initialState = null
 
@@ -17,17 +20,20 @@ const userSlice = createSlice({
     setUserInfo(state, action) {
       state.userInfo = action.payload
       return state
+    },
+    addTraining(state, action) {
+      state.trainings.push(action.payload)
     }
   }
 })
 
-export const { setUser, setUserInfo } = userSlice.actions
+export const { setUser, setUserInfo, addTraining } = userSlice.actions
 
 export const loginUser = credentials => {
   return async dispatch => {
     try {
       const tokenUser = await loginService.login(credentials)
-      userInfoService.setToken(tokenUser.token)
+      tokenFunc.setToken(tokenUser.token)
       const user = await userService.getByUsername(tokenUser.username)
       dispatch(setUser(user))
     } catch {
@@ -40,6 +46,13 @@ export const addUserInfo = userInfo => {
   return async dispatch => {
     await userInfoService.addInfo(userInfo)
     dispatch(setUserInfo(userInfo))
+  }
+}
+
+export const createTraining = training => {
+  return async dispatch => {
+    await trainingService.add(training)
+    dispatch(addTraining(training))
   }
 }
 
