@@ -1,7 +1,5 @@
-let token
+import Cookies from "js-cookie"
 
-const setToken = userToken => {
-  token = `Bearer ${userToken}`
-}
+const token = `Bearer ${Cookies.get('token')}`
 
-export default { setToken, token }
+export default token

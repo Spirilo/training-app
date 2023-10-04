@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux"
 import { useField } from "../hooks"
 import { useNavigate } from "react-router"
-import { addTraining } from "../reducers/userReducer"
+import { createTraining } from "../reducers/userReducer"
 
 const TrainingForm = () => {
   const type = useField('type')
@@ -10,12 +10,13 @@ const TrainingForm = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const add = () => {
+  const add = (ev) => {
+    ev.preventDefault()
     const training = {
       type: type.value,
       duration: Number(duration.value)
     }
-    dispatch(addTraining(training))
+    dispatch(createTraining(training))
     navigate('/')
   }
 

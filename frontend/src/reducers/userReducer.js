@@ -1,11 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit"
+import Cookies from 'js-cookie'
 
 import loginService from '../services/login'
 import userService from '../services/user'
 import userInfoService from '../services/userInfo'
 import trainingService from '../services/training'
-
-import tokenFunc from '../utils/token'
 
 const initialState = null
 
@@ -33,7 +32,7 @@ export const loginUser = credentials => {
   return async dispatch => {
     try {
       const tokenUser = await loginService.login(credentials)
-      tokenFunc.setToken(tokenUser.token)
+      Cookies.set('token', tokenUser.token)
       const user = await userService.getByUsername(tokenUser.username)
       dispatch(setUser(user))
     } catch {
