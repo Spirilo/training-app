@@ -20,3 +20,8 @@
   Router treeneille ja post 1 h
   Error käsittelyä eri erroreille 2 h
   Käyttäjätietojen lisäys frontin puolella (kesken) 2 h
+4.10
+  Käyttäjätietojen lisäys frontin puolella valmis 1 h
+  Treenien lisäys ja listaus frontissa 2 h
+  Tokenin hallitsemiseen käytöksi js-cookie, siihen tutustuminen 2 h
+  Käyttäjätietojen muokkaaminen (kesken) 1 h

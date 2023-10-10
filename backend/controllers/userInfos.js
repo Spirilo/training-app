@@ -9,4 +9,11 @@ router.post('/', tokenExtractor, async (req, res) => {
   return res.json(userInfo)
 })
 
+router.put('/:id', tokenExtractor, async (req, res) => {
+  const userInfo = await UserInfo.findOne({ where: { userId: req.params.id }})
+  userInfo.bio = req.body.bio
+  await userInfo.save()
+  return res.status(200).end()
+})
+
 module.exports = router

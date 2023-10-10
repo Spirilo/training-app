@@ -8,8 +8,16 @@ const addInfo = async info => {
   const config = {
     headers: { Authorization: token },
   }
+  console.log(config)
 
   await axios.post(baseUrl, info, config)
 }
 
-export default { addInfo }
+const updateInfo = async (id, info) => {
+  const config = {
+    headers: { Authorization: token },
+  }
+  await axios.put(`${baseUrl}/${id}`, info, config)
+}
+
+export default { addInfo, updateInfo }

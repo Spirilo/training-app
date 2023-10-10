@@ -7,6 +7,7 @@ import { setUser } from '../reducers/userReducer'
 import TrainingList from './TrainingList'
 import TrainingForm from './TrainingForm'
 import UserInfoForm from './UserInfoForm'
+import UpdateInfo from './UpdateInfo'
 
 const Main = ({ user }) => {
   const dispatch = useDispatch()
@@ -33,6 +34,7 @@ const Main = ({ user }) => {
         <Route path='/traininglist' element={<TrainingList user={user} />} />
         <Route path='/addtraining' element={<TrainingForm />} />
         <Route path='/userinfo' element={<UserInfoForm />} />
+        <Route path='/updateinfo' element={<UpdateInfo user={user} />} />
       </Routes>
     </div>
   )

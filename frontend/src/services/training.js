@@ -8,7 +8,7 @@ const add = async training => {
   const config = {
     headers: { Authorization: token },
   }
-  console.log(config)
+
   await axios.post(baseUrl, training, config)
 }
 

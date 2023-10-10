@@ -22,11 +22,15 @@ const userSlice = createSlice({
     },
     addTraining(state, action) {
       state.trainings.push(action.payload)
+    },
+    updateBio(state, action) {
+      state.userInfo.bio = action.payload
+      return state
     }
   }
 })
 
-export const { setUser, setUserInfo, addTraining } = userSlice.actions
+export const { setUser, setUserInfo, addTraining, updateBio } = userSlice.actions
 
 export const loginUser = credentials => {
   return async dispatch => {
@@ -52,6 +56,13 @@ export const createTraining = training => {
   return async dispatch => {
     await trainingService.add(training)
     dispatch(addTraining(training))
+  }
+}
+
+export const updateUserInfo = (id, info) => {
+  return async dispatch => {
+    await userInfoService.updateInfo(id, info)
+    dispatch(updateBio(info.bio))
   }
 }
 
