@@ -25,3 +25,7 @@
   Treenien lisäys ja listaus frontissa 2 h
   Tokenin hallitsemiseen käytöksi js-cookie, siihen tutustuminen 2 h
   Käyttäjätietojen muokkaaminen (kesken) 1 h
+10.10
+  Käyttäjätietojen muokkaaminen 2 h
+11.10
+  Käyttäjän luonti frontissa 1.5 h

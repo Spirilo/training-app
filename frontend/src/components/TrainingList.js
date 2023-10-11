@@ -5,7 +5,10 @@ const Training = ({ type, duration }) => {
 }
 
 const TrainingList = ({ user }) => {
-  console.log(user)
+  if (user.trainings.length === 0) {
+    return <div>No workouts yet, sure you can do better...</div>
+  }
+
   return(
     <div>
       <ul>

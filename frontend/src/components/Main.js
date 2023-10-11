@@ -1,4 +1,6 @@
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, Link, useNavigate } from 'react-router-dom'
+import Cookies from 'js-cookie'
+
 import UserPage from './UserPage'
 import TeamList from './TeamList'
 import About from './About'
@@ -11,9 +13,12 @@ import UpdateInfo from './UpdateInfo'
 
 const Main = ({ user }) => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const logout = () => {
+    Cookies.remove('token')
     dispatch(setUser(null))
+    navigate('/')
   }
 
   return(
