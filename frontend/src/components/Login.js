@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 
 import { useField } from "../hooks"
 import { loginUser } from "../reducers/userReducer"
+import { Link } from "react-router-dom"
 
 const Login = () => {
   const username = useField('username')
@@ -38,6 +39,7 @@ const Login = () => {
           </button>
         </div>
       </form>
+      <Link to='/signup'>Not a member? Sign up here</Link>
     </div>
   )
 }

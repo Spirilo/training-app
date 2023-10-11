@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import Main from "./components/Main";
-import Login from "./components/Login";
+import LoginMain from "./components/LoginMain";
 
 function App() {
   const user = useSelector(state => state.user)
@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
     {user === null  ? 
-      <Login />
+      <LoginMain />
     :
       <Main user={user} />
     }
