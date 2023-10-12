@@ -3,9 +3,9 @@ import { useField } from "../hooks"
 import userService from '../services/user'
 
 const SignUp = () => {
-  const username = useField('username')
-  const password = useField('password')
-  const passwordCheck = useField('pwcheck')
+  const {reset: resetUsername, ...username} = useField('username')
+  const {reset: resetPassword, ...password} = useField('password')
+  const {reset: resetPwCheck, ...passwordCheck} = useField('pwcheck')
 
   const sign = async (ev) => {
     ev.preventDefault()
@@ -17,9 +17,9 @@ const SignUp = () => {
       username: username.value,
       password: password.value
     }
-    username.reset()
-    password.reset()
-    passwordCheck.reset()
+    resetUsername()
+    resetPassword()
+    resetPwCheck()
     
     try {
       const data = await userService.createUser(user)

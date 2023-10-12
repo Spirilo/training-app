@@ -6,8 +6,8 @@ import { loginUser } from "../reducers/userReducer"
 import { Link } from "react-router-dom"
 
 const Login = () => {
-  const username = useField('username')
-  const password = useField('password')
+  const {reset: resetUsername, ...username} = useField('username')
+  const {reset: resetPass, ...password} = useField('password')
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -18,6 +18,8 @@ const Login = () => {
       username: username.value,
       password: password.value
     }
+    resetUsername()
+    resetPass()
     dispatch(loginUser(user))
     
     navigate('/')

@@ -29,3 +29,6 @@
   Käyttäjätietojen muokkaaminen 2 h
 11.10
   Käyttäjän luonti frontissa 1.5 h
+  Team ja membership router, osa CRUD 2 h
+  Tiimit frontissa esille 1 h
+  Ryhmiin liittyminen/poistuminen ja sen näyttäminen frontissa (kesken) 1.5 h

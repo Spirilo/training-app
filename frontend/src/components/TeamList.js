@@ -1,29 +1,35 @@
-import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { getTeams } from "../reducers/teamReducer"
+import { useNavigate } from "react-router"
 
-const Team = ({ name, info, count }) => {
+const Team = ({ name, count, handleClick }) => {
   return(
-    <li>{name}, info: {info}. Members: {count}</li>
+    <li>
+      {name}. Members: {count}
+      <button onClick={() => handleClick()}>Avaa</button>
+    </li>
   )
 }
 
-const TeamList = () => {
-  const teams = useSelector(state => state.teams)
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(getTeams())
-  }, [])
+const TeamList = ({ teams }) => {
+  const navigate = useNavigate()
 
   console.log(teams)
+
+  if(teams === null) return <div>loading...</div>
+  if(teams.length === 0) return <div>No teams yet...</div>
+
+  const handleClick = (id) => {
+    navigate(`/teams/${id}`)
+  }
 
   return(
     <div>
       TeamList
       <ul>
         {teams.map(t => 
-          <Team name={t.name} info={t.info} count={t.users.length} />
+          <Team 
+            name={t.name}
+            count={t.users.length} 
+            handleClick={() => handleClick(t.id)} />
         )}
       </ul>
     </div>
