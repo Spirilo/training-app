@@ -1,6 +1,6 @@
-const Training = ({ type, duration }) => {
+const Training = ({ type, duration, key }) => {
   return(
-    <li>{type}, duration {duration} min</li>
+    <li key={key}>{type}, duration {duration} min</li>
   )
 }
 

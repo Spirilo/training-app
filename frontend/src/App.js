@@ -15,6 +15,8 @@ function App() {
     dispatch(getTeams())
   }, [])
 
+  console.log(teams)
+
   return (
     <div>
     {user === null  ? 

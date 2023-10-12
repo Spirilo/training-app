@@ -12,8 +12,6 @@ const Team = ({ name, count, handleClick }) => {
 const TeamList = ({ teams }) => {
   const navigate = useNavigate()
 
-  console.log(teams)
-
   if(teams === null) return <div>loading...</div>
   if(teams.length === 0) return <div>No teams yet...</div>
 

@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
       model: User,
       attributes: ['username'],
       through: {
-        attributes: []
+        attributes: ['id']
       }
     }
   })
