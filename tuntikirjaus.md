@@ -32,3 +32,6 @@
   Team ja membership router, osa CRUD 2 h
   Tiimit frontissa esille 1 h
   Ryhmiin liittyminen/poistuminen ja sen näyttäminen frontissa (kesken) 1.5 h
+12.10
+  Tiimiinfo komponentti ja refaktorointia 1 h
+  Tiimeihin liittyminen ja poistuminen 5 h

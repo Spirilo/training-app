@@ -1,6 +1,6 @@
-const Training = ({ type, duration, key }) => {
+const Training = ({ training }) => {
   return(
-    <li key={key}>{type}, duration {duration} min</li>
+    <li key={training.id}>{training.type}, duration {training.duration} min</li>
   )
 }
 
@@ -13,7 +13,7 @@ const TrainingList = ({ user }) => {
     <div>
       <ul>
         {user.trainings.map(t => 
-          <Training key={t.id} type={t.type} duration={t.duration} />
+          <Training training={t} />
         )}
       </ul>
     </div>
