@@ -20,4 +20,14 @@ router.post('/', async (req, res) => {
   return res.json(team)
 })
 
+router.put('/:id/messages', async (req, res) => {
+  const team = await Team.findOne({ where: { id: req.params.id }})
+  const newArray = Object.assign([], team.messages)
+  newArray.push(req.body.message)
+  await team.update({
+    messages: newArray
+  })
+  return res.json(team)
+})
+
 module.exports = router

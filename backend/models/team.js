@@ -17,6 +17,10 @@ Team.init({
   info: {
     type: DataTypes.STRING,
     allowNull: false
+  },
+  messages: {
+    type: DataTypes.ARRAY(DataTypes.STRING),
+    defaultValue: ['Welcome to team!']
   }
 }, {
   sequelize,

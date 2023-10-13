@@ -7,4 +7,9 @@ const getAll = async () => {
   return res.data
 }
 
-export default { getAll }
+const addMessage = async (id, msg) => {
+  console.log(id, msg)
+  await axios.put(`${baseUrl}/${id}/messages`, msg)
+}
+
+export default { getAll, addMessage }

@@ -3,6 +3,7 @@ import Main from "./components/Main";
 import LoginMain from "./components/LoginMain";
 import { useEffect } from "react";
 import { getTeams } from "./reducers/teamReducer";
+import Cookies from "js-cookie";
 
 
 function App() {
@@ -12,8 +13,9 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
+    if (user === null) Cookies.remove('token')
     dispatch(getTeams())
-  }, [])
+  }, [user])
 
   console.log(teams)
 

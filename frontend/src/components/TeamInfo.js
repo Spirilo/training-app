@@ -1,9 +1,10 @@
 import { useDispatch } from 'react-redux'
-import { addTeamMember, deleteMember } from '../reducers/teamReducer'
+import { addMessage, addTeamMember, deleteMember } from '../reducers/teamReducer'
+import { useField } from '../hooks'
 
 const TeamInfo = ({ team, user }) => {
+  const msg = useField('msg')
   const dispatch = useDispatch()
-  console.log(team)
 
   let member
 
@@ -27,6 +28,10 @@ const TeamInfo = ({ team, user }) => {
     dispatch(deleteMember(body))
   }
 
+  const addMsg = () => {
+    dispatch(addMessage(team.id, msg.value))
+  }
+
   return(
     <div>
       <h3>
@@ -44,6 +49,18 @@ const TeamInfo = ({ team, user }) => {
         <li>{t.username}</li>
         )}
       </ul>
+      {member && 
+        <div>
+          <p>Messages:</p>
+          {team.messages.map(m =>
+            <p key={m}>{m}</p>  
+          )}
+          <div>
+            <textarea {...msg} placeholder='Write a message' />
+            <button onClick={addMsg}>Add msg</button>
+          </div>
+        </div>
+      }
     </div>
   )
 }

@@ -19,6 +19,8 @@ const TeamList = ({ teams }) => {
     navigate(`/teams/${id}`)
   }
 
+  console.log(teams)
+
   return(
     <div>
       TeamList
