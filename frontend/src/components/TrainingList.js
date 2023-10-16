@@ -12,7 +12,7 @@ const TrainingList = ({ user }) => {
   }
 
   return(
-    <div>
+    <div className='training'>
       <ul>
         {user.trainings.map(t => 
           <Training training={t} />

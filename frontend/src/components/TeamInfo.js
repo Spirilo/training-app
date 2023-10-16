@@ -2,6 +2,8 @@ import { useDispatch } from 'react-redux'
 import { addMessage, addTeamMember, deleteMember } from '../reducers/teamReducer'
 import { useField } from '../hooks'
 
+import './TeamInfo.css'
+
 const TeamInfo = ({ team, user }) => {
   const msg = useField('msg')
   const dispatch = useDispatch()
@@ -34,7 +36,8 @@ const TeamInfo = ({ team, user }) => {
 
   return(
     <div>
-      <h3>
+    <div className='team-container'>
+      <h3 className='team-name'>
         {team.name}
         {member ?
           <button onClick={leaveTeam}>Poistu</button>
@@ -42,25 +45,31 @@ const TeamInfo = ({ team, user }) => {
           <button onClick={joinTeam}>Liity</button>
         }
       </h3>
-      <p>{team.info}</p>
-      Members:
-      <ul>
-        {team.users.map(t =>
-        <li>{t.username}</li>
-        )}
-      </ul>
+      <div className='team-info'>
+        <p>Info/ {team.info}</p>
+        Members:
+        <ul>
+          {team.users.map(t =>
+          <li>{t.username}</li>
+          )}
+        </ul>
+      </div>
+    </div>
+    
+    <div >
       {member && 
-        <div>
-          <p>Messages:</p>
+        <div className='messages-container'>
+          <h3 className='messages-name'>Chat/</h3>
           {team.messages.map(m =>
             <p key={m}>{m}</p>  
           )}
           <div>
             <textarea {...msg} placeholder='Write a message' />
-            <button onClick={addMsg}>Add msg</button>
+            <p><button onClick={addMsg}>Add msg</button></p>
           </div>
         </div>
       }
+    </div>
     </div>
   )
 }

@@ -25,6 +25,7 @@
   border: none;
   border-radius: 3px;
   font-family: 'Trebuchet MS';
+  cursor: pointer;
 }
 
 .navbar a:hover {

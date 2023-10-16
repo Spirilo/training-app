@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router"
 
+import './TeamList.css'
+
 const Team = ({ name, count, handleClick }) => {
   return(
     <li>
-      {name}. Members: {count}
+      <p>{name}. Members: {count}</p>
       <button onClick={() => handleClick()}>Avaa</button>
     </li>
   )
@@ -22,8 +24,7 @@ const TeamList = ({ teams }) => {
   console.log(teams)
 
   return(
-    <div>
-      TeamList
+    <div className="teams">
       <ul>
         {teams.map(t => 
           <Team 
