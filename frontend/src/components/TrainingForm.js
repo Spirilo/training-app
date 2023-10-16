@@ -3,6 +3,8 @@ import { useField } from "../hooks"
 import { useNavigate } from "react-router"
 import { createTraining } from "../reducers/userReducer"
 
+import './TrainingForm.css'
+
 const TrainingForm = () => {
   const type = useField('type')
   const duration = useField('duration')
@@ -30,9 +32,9 @@ const TrainingForm = () => {
   }
 
   return(
-    <div>
+    <div className="training-form">
       <form onSubmit={add}>
-        Training type: 
+        <p>Training type: 
         <select name="workouts" {...type}>
           <option disabled={true} value=''>Choose training</option>
           <option value='Gym'>Gym</option>
@@ -40,11 +42,12 @@ const TrainingForm = () => {
           <option value='Run'>Run</option>
           <option value='other'>Other, what?</option>
         </select>
+        </p>
         <div>
           {type.value === 'other' && <input placeholder="Type training here" {...other} />}
         </div>
         <div>
-          Duration (in minutes): <input {...duration} />
+          <p>Duration (in minutes): <input {...duration} /></p>
         </div>
         <div>
           <button type='submit'>Add</button>

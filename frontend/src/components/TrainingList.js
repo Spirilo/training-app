@@ -1,3 +1,5 @@
+import './TrainingList.css'
+
 const Training = ({ training }) => {
   return(
     <li key={training.id}>{training.type}, duration {training.duration} min</li>
