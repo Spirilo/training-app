@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import { useField } from "../hooks"
 import { loginUser } from "../reducers/userReducer"
 import { Link } from "react-router-dom"
+import './Login.css'
 
 const Login = () => {
   const {reset: resetUsername, ...username} = useField('username')
@@ -26,11 +27,11 @@ const Login = () => {
   }
 
   return(
-    <div>
-      Loginform
+    <div className="login-form">
+      <h2>Fitflow</h2>
       <form onSubmit={login}>
         <div>
-          <input {...username} placeholder="Username" />
+          <input {...username} type="text" placeholder="Username" />
         </div>
         <div>
           <input {...password} type="password" placeholder="Password" />
@@ -41,7 +42,7 @@ const Login = () => {
           </button>
         </div>
       </form>
-      <Link to='/signup'>Not a member? Sign up here</Link>
+      <Link className="sign-up" to='/signup'>Not a member? Sign up here</Link>
     </div>
   )
 }

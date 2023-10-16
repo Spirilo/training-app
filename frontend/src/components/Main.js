@@ -11,6 +11,7 @@ import TrainingForm from './TrainingForm'
 import UserInfoForm from './UserInfoForm'
 import UpdateInfo from './UpdateInfo'
 import TeamInfo from './TeamInfo'
+import './Main.css'
 
 const Main = ({ user, teams }) => {
   const dispatch = useDispatch()
@@ -29,17 +30,16 @@ const Main = ({ user, teams }) => {
 
   return(
     <div>
-      <div>
+      <div className='navbar'>
         <Link to="/">FitFlow</Link>
         <Link to="/user">Profile</Link>
         <Link to="/teams">Teams</Link>
         <Link to="/traininglist">Workouts</Link>
         <Link to="/addtraining">Add a workout</Link>
-        Welcome back {user.username}
-        <button onClick={logout}>Logout</button>
+        <button onClick={logout}>Logout {user.username}</button>
       </div>
       <Routes>
-        <Route path='/' element={<About />} />
+        <Route path='/' element={<About user={user} />} />
         <Route path='/user' element={<UserPage />} />
         <Route path='/teams' element={<TeamList teams={teams} />} />
         <Route path='/teams/:id' element={<TeamInfo team={team} user={user} />} />

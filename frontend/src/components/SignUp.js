@@ -2,6 +2,8 @@ import { Link } from "react-router-dom"
 import { useField } from "../hooks"
 import userService from '../services/user'
 
+import './SignUp.css'
+
 const SignUp = () => {
   const {reset: resetUsername, ...username} = useField('username')
   const {reset: resetPassword, ...password} = useField('password')
@@ -30,22 +32,22 @@ const SignUp = () => {
   }
 
   return(
-    <div>
+    <div className="signup-form">
       <form onSubmit={sign}>
         <div>
-          Username: <input {...username} />
+          <input {...username} type="text" placeholder="Username" />
         </div>
         <div>
-          Password: <input {...password} type="password" />
+          <input {...password} type="password" placeholder="Password" />
         </div>
         <div>
-          Confirm password: <input {...passwordCheck} type="password" />
+          <input {...passwordCheck} type="password" placeholder="Confirm password" />
         </div>
         <div>
           <button type="submit">Sign up</button>
         </div>
       </form>
-      <Link to='/'>Already signed up? Login here</Link>
+      <Link className="login" to='/'>Already signed up? Login here</Link>
     </div>
   )
 }

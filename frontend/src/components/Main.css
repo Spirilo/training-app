@@ -1,0 +1,33 @@
+.navbar {
+  background-color: teal;
+  overflow: hidden;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar button {
+  float: right; 
+  display: block;
+  background-color: teal; 
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border: none;
+  border-radius: 3px;
+}
+
+.navbar a:hover {
+  background-color: #555; 
+}
+
+.navbar button:hover {
+  background-color: #555;
+}

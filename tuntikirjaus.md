@@ -35,3 +35,6 @@
 12.10
   Tiimiinfo komponentti ja refaktorointia 1 h
   Tiimeihin liittyminen ja poistuminen 5 h
+13.10
+  Treeni formin refaktorointia 1.5 h
+  Viestittely tiimin sisällä 4 h
