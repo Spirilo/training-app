@@ -1,0 +1,49 @@
+.profile-container {
+  max-width: 200px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Trebuchet MS';
+}
+
+.profile-name {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.profile-details {
+  font-size: 18px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.profile-bio {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.profile-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: 'Trebuchet MS';
+}
+
+.add-infromation {
+  text-align: left;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+  font-family: 'Trebuchet MS';
+}
+
+.add-infromation:hover {
+  text-decoration: underline;
+}

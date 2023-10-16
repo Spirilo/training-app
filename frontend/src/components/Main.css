@@ -1,6 +1,8 @@
 .navbar {
   background-color: teal;
   overflow: hidden;
+  border-radius: 5px;
+  font-family: 'Trebuchet MS';
 }
 
 .navbar a {
@@ -22,6 +24,7 @@
   text-decoration: none;
   border: none;
   border-radius: 3px;
+  font-family: 'Trebuchet MS';
 }
 
 .navbar a:hover {

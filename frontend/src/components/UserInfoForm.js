@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux"
 import { useField } from "../hooks"
 import { addUserInfo } from "../reducers/userReducer"
 
+import './UserInfoForm.css'
+
 const UserInfoForm = () => {
   const name = useField('name')
   const age = useField('age')
@@ -28,19 +30,19 @@ const UserInfoForm = () => {
   }
 
   return(
-    <div>
+    <div className="userinfo-form">
       <form onSubmit={addInfo}>
         <div>
-          Name: <input {...name} />
+          <p>Name: <input {...name} /></p>
         </div>
         <div>
-          Age: <input {...age} />
+          <p>Age: <input {...age} /></p>
         </div>
         <div>
-          City: <input {...city} />
+          <p>City: <input {...city} /></p>
         </div>
         <div>
-          Bio: <textarea rows='4' cols='25' {...bio} ></textarea>
+          <p>Bio: <textarea rows='4' cols='25' {...bio} ></textarea></p>
         </div>
         <div>
           <button type='submit'>Confirm</button>

@@ -3,6 +3,8 @@ import { useField } from "../hooks"
 import { useNavigate } from "react-router"
 import { updateUserInfo } from "../reducers/userReducer"
 
+import './UpdateInfo.css'
+
 const UpdateInfo = ({ user }) => {
   const bio = useField('bio')
 
@@ -17,11 +19,10 @@ const UpdateInfo = ({ user }) => {
   }
 
   return(
-    <div>
-      Update
+    <div className="updateinfo-form">
       <form>
         <div>
-          <textarea rows='4' cols='25' {...bio} ></textarea>
+          <p>Update bio: <textarea rows='4' cols='25' {...bio} ></textarea></p>
         </div>
         <div>
           <button onClick={update}>Update</button>

@@ -9,6 +9,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-family: 'Trebuchet MS';
 }
 
 .signup-form h2 {
@@ -25,6 +26,7 @@
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 3px;
+  font-family: 'Trebuchet MS';
 }
 
 .signup-form button {
@@ -35,6 +37,7 @@
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  font-family: 'Trebuchet MS';
 }
 
 .signup-form button:hover {

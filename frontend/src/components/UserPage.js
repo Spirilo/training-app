@@ -1,6 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from "react-redux"
 
+import './UserPage.css'
+
 const UserPage = () => {
   const user = useSelector(state => state.user)
 
@@ -8,7 +10,7 @@ const UserPage = () => {
 
   if (user.userInfo === null) {
     return(
-      <Link to='/userinfo'>Please add your information here!</Link>
+      <Link className='add-infromation' to='/userinfo'>Please add your information here!</Link>
     )
   }
 
@@ -17,12 +19,14 @@ const UserPage = () => {
   }
 
   return(
-    <div>
-      Userpage
-      <p>Name: {user.userInfo.name} </p>
-      <p>Age: {user.userInfo.age} </p>
-      <p>City: {user.userInfo.city} </p>
-      <p>Bio: {user.userInfo.bio} <button onClick={moveToUpdate}>Update bio</button> </p>
+    <div className='profile-container'>
+      <p className='profile-name'>{user.userInfo.name} </p>
+      <div className='profile-details'>
+        <p>Age/ {user.userInfo.age} </p>
+        <p>City/ {user.userInfo.city} </p>
+      </div>
+      <p className='profile-bio'>Bio/ {user.userInfo.bio}</p>
+      <button onClick={moveToUpdate}>Update bio</button> 
     </div>
   )
 }

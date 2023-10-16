@@ -1,0 +1,30 @@
+.updateinfo-form {
+  max-width: 200px;
+  padding: 50px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.updateinfo-form p {
+  font-size: 20px;
+  line-height: 1.2;
+  margin: 0 0 15px;
+  color: teal;
+  font-family: 'Trebuchet MS';
+}
+
+.updateinfo-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: 'Trebuchet MS';
+}
+
+.updateinfo-form button:hover {
+  background-color: #0056b3;
+}
