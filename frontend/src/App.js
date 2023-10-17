@@ -21,11 +21,11 @@ function App() {
 
   return (
     <div>
-    {user === null  ? 
-      <LoginMain />
-    :
-      <Main user={user} teams={teams} />
-    }
+      {user === null  ? 
+        <LoginMain />
+      :
+        <Main user={user} teams={teams} />
+      }
     </div>
   )
 }

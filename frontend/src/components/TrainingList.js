@@ -8,7 +8,7 @@ const Training = ({ training }) => {
 
 const TrainingList = ({ user }) => {
   if (user.trainings.length === 0) {
-    return <div>No workouts yet, sure you can do better...</div>
+    return <div className='no-training'>No workouts yet, sure you can do better...</div>
   }
 
   return(

@@ -5,6 +5,7 @@ import loginService from '../services/login'
 import userService from '../services/user'
 import userInfoService from '../services/userInfo'
 import trainingService from '../services/training'
+import { setNotification } from "./notificationReducer"
 
 const initialState = null
 
@@ -39,8 +40,9 @@ export const loginUser = credentials => {
       Cookies.set('token', tokenUser.token)
       const user = await userService.getByUsername(tokenUser.username)
       dispatch(setUser(user))
-    } catch {
-      console.log('ERROR')
+    } catch(err) {
+      console.log(err.response.data)
+      dispatch(setNotification(err.response.data.error, 5))
     }
   }
 }

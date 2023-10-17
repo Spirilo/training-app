@@ -15,7 +15,7 @@ const TeamList = ({ teams }) => {
   const navigate = useNavigate()
 
   if(teams === null) return <div>loading...</div>
-  if(teams.length === 0) return <div>No teams yet...</div>
+  if(teams.length === 0) return <div className="no-teams">No teams yet...</div>
 
   const handleClick = (id) => {
     navigate(`/teams/${id}`)

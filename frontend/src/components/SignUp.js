@@ -3,16 +3,22 @@ import { useField } from "../hooks"
 import userService from '../services/user'
 
 import './SignUp.css'
+import { useDispatch, useSelector } from "react-redux"
+import Notification from "./Notification"
+import { setNotification } from "../reducers/notificationReducer"
 
 const SignUp = () => {
   const {reset: resetUsername, ...username} = useField('username')
   const {reset: resetPassword, ...password} = useField('password')
   const {reset: resetPwCheck, ...passwordCheck} = useField('pwcheck')
+  const notification = useSelector(state => state.notification)
+
+  const dispatch = useDispatch()
 
   const sign = async (ev) => {
     ev.preventDefault()
     if (password.value !== passwordCheck.value) {
-      console.log('ERROR')
+      dispatch(setNotification('Passwords dont match!', 5))
       return
     }
     const user = {
@@ -27,12 +33,18 @@ const SignUp = () => {
       const data = await userService.createUser(user)
       console.log(data)
     } catch (error) {
-      console.log(error.response.data)
+      dispatch(setNotification(error.response.data.error, 5))
     }
   }
 
   return(
     <div className="signup-form">
+      {notification !== null &&
+        <div className="notification">
+          <Notification />
+        </div>
+      }
+      <h2>Fitflow</h2>
       <form onSubmit={sign}>
         <div>
           <input {...username} type="text" placeholder="Username" />

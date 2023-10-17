@@ -1,14 +1,16 @@
 import { useNavigate } from "react-router"
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { useField } from "../hooks"
 import { loginUser } from "../reducers/userReducer"
 import { Link } from "react-router-dom"
 import './Login.css'
+import Notification from "./Notification"
 
 const Login = () => {
   const {reset: resetUsername, ...username} = useField('username')
   const {reset: resetPass, ...password} = useField('password')
+  const notification = useSelector(state => state.notification)
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -28,6 +30,11 @@ const Login = () => {
 
   return(
     <div className="login-form">
+      {notification !== null &&
+        <div className="notification">
+          <Notification />
+        </div>
+      }
       <h2>Fitflow</h2>
       <form onSubmit={login}>
         <div>

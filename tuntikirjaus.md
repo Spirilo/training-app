@@ -38,3 +38,7 @@
 13.10
   Treeni formin refaktorointia 1.5 h
   Viestittely tiimin sisällä 4 h
+16.10
+  Tyylejä 6 h
+17.10
+  Virheilmoitusten näyttäminen frontissa 2 h
