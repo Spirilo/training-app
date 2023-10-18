@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 
 import Notification from "./Notification"
 
@@ -10,12 +10,10 @@ import { useField } from "../hooks"
 
 import './SignUp.css'
 
-const SignUp = () => {
+const SignUp = ( {notification} ) => {
   const {reset: resetUsername, ...username} = useField('username')
   const {reset: resetPassword, ...password} = useField('password')
   const {reset: resetPwCheck, ...passwordCheck} = useField('pwcheck')
-
-  const notification = useSelector(state => state.notification)
 
   const dispatch = useDispatch()
 

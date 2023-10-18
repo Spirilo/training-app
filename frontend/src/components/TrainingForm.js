@@ -2,13 +2,14 @@ import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router"
 
 import { createTraining } from "../reducers/userReducer"
+import { setNotification } from "../reducers/notificationReducer"
 
+import Notification from './Notification'
 import { useField } from "../hooks"
 
 import './TrainingForm.css'
-import { setNotification } from "../reducers/notificationReducer"
 
-const TrainingForm = () => {
+const TrainingForm = ({ notification }) => {
   const type = useField('type')
   const duration = useField('duration')
   const other = useField('other')
@@ -40,6 +41,11 @@ const TrainingForm = () => {
 
   return(
     <div className="training-form">
+      {notification !== null &&
+      <div className="notification">
+        <Notification />
+      </div>
+      }
       <form onSubmit={add}>
         <p>Training type: 
         <select name="workouts" {...type}>

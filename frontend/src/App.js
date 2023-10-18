@@ -11,6 +11,7 @@ import { getTeams } from "./reducers/teamReducer";
 function App() {
   const user = useSelector(state => state.user)
   const teams = useSelector(state => state.teams)
+  const notification = useSelector(state => state.notification)
 
   const dispatch = useDispatch()
 
@@ -22,9 +23,9 @@ function App() {
   return (
     <div>
       {user === null  ? 
-        <LoginMain />
+        <LoginMain notification={notification} />
       :
-        <Main user={user} teams={teams} />
+        <Main user={user} teams={teams} notification={notification} />
       }
     </div>
   )

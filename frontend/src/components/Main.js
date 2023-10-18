@@ -15,7 +15,7 @@ import { setUser } from '../reducers/userReducer'
 
 import './Main.css'
 
-const Main = ({ user, teams }) => {
+const Main = ({ user, teams, notification }) => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -46,7 +46,7 @@ const Main = ({ user, teams }) => {
         <Route path='/teams' element={<TeamList teams={teams} />} />
         <Route path='/teams/:id' element={<TeamInfo team={team} user={user} />} />
         <Route path='/traininglist' element={<TrainingList user={user} />} />
-        <Route path='/addtraining' element={<TrainingForm />} />
+        <Route path='/addtraining' element={<TrainingForm notification={notification} />} />
         <Route path='/userinfo' element={<UserInfoForm />} />
         <Route path='/updateinfo' element={<UpdateInfo user={user} />} />
       </Routes>

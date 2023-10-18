@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router"
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Link } from "react-router-dom"
 
 import { loginUser } from "../reducers/userReducer"
@@ -9,11 +9,9 @@ import { useField } from "../hooks"
 
 import './Login.css'
 
-const Login = () => {
+const Login = ({ notification }) => {
   const {reset: resetUsername, ...username} = useField('username')
   const {reset: resetPass, ...password} = useField('password')
-
-  const notification = useSelector(state => state.notification)
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
