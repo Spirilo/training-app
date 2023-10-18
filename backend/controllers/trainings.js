@@ -5,7 +5,13 @@ const { tokenExtractor } = require('../util/middleware')
 
 router.post('/', tokenExtractor, async (req, res) => {
   const user = await User.findByPk(req.decodedToken.id)
-  console.log(user)
+  const { type, duration } = req.body
+  if(!type) {
+    return res.status(400).send({ error: 'Workout must have type!' })
+  }
+  if(duration < 1) {
+    return res.status(400).send({ error: 'Workout must have positive duration!' })
+  }
   const trainingInfo = await Training.create({ ...req.body, userId: user.id})
   return res.json(trainingInfo)
 })

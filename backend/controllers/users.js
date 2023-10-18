@@ -38,6 +38,9 @@ router.post('/', async (req, res) => {
   const { username, password } = req.body
   
   const saltRounds = 10
+  if (!username) {
+    return res.status(400).send({ error: 'Username can`t be empty!' })
+  }
   if (!password) {
     return res.status(400).send({ error: 'Password missing!' })
   }

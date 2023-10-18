@@ -6,6 +6,7 @@ import { createTraining } from "../reducers/userReducer"
 import { useField } from "../hooks"
 
 import './TrainingForm.css'
+import { setNotification } from "../reducers/notificationReducer"
 
 const TrainingForm = () => {
   const type = useField('type')
@@ -15,7 +16,7 @@ const TrainingForm = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const add = (ev) => {
+  const add = async (ev) => {
     ev.preventDefault()
     let training
     if (type.value === 'other') {
@@ -29,8 +30,12 @@ const TrainingForm = () => {
         duration: Number(duration.value)
       }
     }
-    dispatch(createTraining(training))
-    navigate('/')
+    try {
+      await dispatch(createTraining(training))
+      navigate('/')
+    } catch(err) {
+      dispatch(setNotification(err.response.data.error, 5))
+    }
   }
 
   return(
