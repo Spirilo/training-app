@@ -6,6 +6,7 @@ const app = express()
 const { PORT } = require('./util/config')
 const { connectToDatabase } = require('./util/db')
 const { errorHandler } = require('./util/middleware')
+const { populateDatabase } = require('./util/populate')
 
 const usersRouter = require('./controllers/users')
 const loginRouter = require('./controllers/login')
@@ -28,6 +29,7 @@ app.use(errorHandler)
 
 const start = async () => {
   await connectToDatabase()
+  await populateDatabase()
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
   })

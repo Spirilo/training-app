@@ -2,13 +2,13 @@
   max-width: 400px;
   padding: 50px;
   border: 1px solid #ccc;
-  background-color: #f9f9f9;
   border-radius: 5px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Trebuchet MS';
+  background-color: teal;
 }
 
 .login-form h2 {
@@ -46,7 +46,7 @@
 .login-form .sign-up {
   text-align: left;
   margin-top: 10px;
-  color: #007bff;
+  color: black;
   text-decoration: none;
 }
 

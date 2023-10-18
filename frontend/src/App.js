@@ -13,6 +13,7 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
+    console.log(user)
     if (user === null) Cookies.remove('token')
     dispatch(getTeams())
   }, [user])
