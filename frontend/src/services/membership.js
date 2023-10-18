@@ -7,7 +7,6 @@ const joinTeam = async (body) => {
 }
 
 const leaveTeam = async (body) => {
-  console.log(body)
   await axios.delete(baseUrl, { data: body } )
 }
 

@@ -1,16 +1,18 @@
 import { Routes, Route, Link, useNavigate, useMatch } from 'react-router-dom'
 import Cookies from 'js-cookie'
+import { useDispatch } from 'react-redux'
 
 import UserPage from './UserPage'
 import TeamList from './TeamList'
 import About from './About'
-import { useDispatch } from 'react-redux'
-import { setUser } from '../reducers/userReducer'
 import TrainingList from './TrainingList'
 import TrainingForm from './TrainingForm'
 import UserInfoForm from './UserInfoForm'
 import UpdateInfo from './UpdateInfo'
 import TeamInfo from './TeamInfo'
+
+import { setUser } from '../reducers/userReducer'
+
 import './Main.css'
 
 const Main = ({ user, teams }) => {

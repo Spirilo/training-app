@@ -5,6 +5,7 @@ import loginService from '../services/login'
 import userService from '../services/user'
 import userInfoService from '../services/userInfo'
 import trainingService from '../services/training'
+
 import { setNotification } from "./notificationReducer"
 
 const initialState = null

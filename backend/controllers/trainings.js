@@ -5,6 +5,7 @@ const { tokenExtractor } = require('../util/middleware')
 
 router.post('/', tokenExtractor, async (req, res) => {
   const user = await User.findByPk(req.decodedToken.id)
+  console.log(user)
   const trainingInfo = await Training.create({ ...req.body, userId: user.id})
   return res.json(trainingInfo)
 })

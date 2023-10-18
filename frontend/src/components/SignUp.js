@@ -1,16 +1,20 @@
 import { Link } from "react-router-dom"
-import { useField } from "../hooks"
+import { useDispatch, useSelector } from "react-redux"
+
+import Notification from "./Notification"
+
 import userService from '../services/user'
+import { setNotification } from "../reducers/notificationReducer"
+
+import { useField } from "../hooks"
 
 import './SignUp.css'
-import { useDispatch, useSelector } from "react-redux"
-import Notification from "./Notification"
-import { setNotification } from "../reducers/notificationReducer"
 
 const SignUp = () => {
   const {reset: resetUsername, ...username} = useField('username')
   const {reset: resetPassword, ...password} = useField('password')
   const {reset: resetPwCheck, ...passwordCheck} = useField('pwcheck')
+
   const notification = useSelector(state => state.notification)
 
   const dispatch = useDispatch()
@@ -30,8 +34,7 @@ const SignUp = () => {
     resetPwCheck()
     
     try {
-      const data = await userService.createUser(user)
-      console.log(data)
+      await userService.createUser(user)
     } catch (error) {
       dispatch(setNotification(error.response.data.error, 5))
     }

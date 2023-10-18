@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
+
 import userReducer from './reducers/userReducer'
 import teamReducer from './reducers/teamReducer'
 import notificationReducer from './reducers/notificationReducer'

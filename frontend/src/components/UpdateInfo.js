@@ -1,7 +1,9 @@
 import { useDispatch } from "react-redux"
-import { useField } from "../hooks"
 import { useNavigate } from "react-router"
+
 import { updateUserInfo } from "../reducers/userReducer"
+
+import { useField } from "../hooks"
 
 import './UpdateInfo.css'
 

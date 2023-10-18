@@ -1,7 +1,9 @@
 import { useDispatch } from "react-redux"
-import { useField } from "../hooks"
 import { useNavigate } from "react-router"
+
 import { createTraining } from "../reducers/userReducer"
+
+import { useField } from "../hooks"
 
 import './TrainingForm.css'
 

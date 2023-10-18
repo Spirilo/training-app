@@ -30,6 +30,7 @@ const tokenExtractor = async (req, res, next) => {
     try {
       console.log(authorization.substring(7))
       req.decodedToken = jwt.verify(authorization.substring(7), SECRET)
+      console.log(req.decodedToken)
     } catch (error){
       console.log(error)
       return res.status(401).json({ error: 'token invalid' })

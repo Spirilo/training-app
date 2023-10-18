@@ -1,9 +1,9 @@
-const About = ({ user }) => {
-  console.log(user)
+import './About.css'
 
+const About = ({ user }) => {
   return(
-    <div>
-      This is the main page
+    <div className='main'>
+      Welcome back {user.username}!
     </div>
   )
 }

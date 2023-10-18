@@ -7,7 +7,7 @@ const populateDatabase = async () => {
     for(const data of userData) {
       data.password = await bcrypt.hash(data.password, 10)
 
-      await User.findOrCreate({ where: data })
+      await User.findOrCreate({ where: {username: data.username }})
     }
     for(const data of teamData) {
       await Team.findOrCreate({ where: data })

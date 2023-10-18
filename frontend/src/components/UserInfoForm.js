@@ -23,7 +23,6 @@ const UserInfoForm = () => {
       city: city.value,
       bio: bio.value
     }
-    console.log(userInfo)
     dispatch(addUserInfo(userInfo))
 
     navigate('/')

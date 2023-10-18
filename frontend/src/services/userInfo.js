@@ -1,21 +1,18 @@
 import axios from "axios"
-
-import token from "../utils/token"
+import Cookies from "js-cookie"
 
 const baseUrl = 'http://localhost:3001/api/userinfo'
 
 const addInfo = async info => {
   const config = {
-    headers: { Authorization: token },
+    headers: { Authorization: `Bearer ${Cookies.get('token')}` },
   }
-  console.log(config)
-
   await axios.post(baseUrl, info, config)
 }
 
 const updateInfo = async (id, info) => {
   const config = {
-    headers: { Authorization: token },
+    headers: { Authorization: `Bearer ${Cookies.get('token')}` },
   }
   await axios.put(`${baseUrl}/${id}`, info, config)
 }
