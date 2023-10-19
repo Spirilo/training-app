@@ -14,6 +14,7 @@ import TeamInfo from './TeamInfo'
 import { setUser } from '../reducers/userReducer'
 
 import './Main.css'
+import AdminPage from './AdminPage'
 
 const Main = ({ user, teams, notification }) => {
   const dispatch = useDispatch()
@@ -38,6 +39,11 @@ const Main = ({ user, teams, notification }) => {
         <Link to="/teams">Teams</Link>
         <Link to="/traininglist">Workouts</Link>
         <Link to="/addtraining">Add a workout</Link>
+        {user.username === 'admin' &&
+          <div>
+            <Link to="/admin">Admingpage</Link>
+          </div>
+        }
         <button onClick={logout}>Logout {user.username}</button>
       </div>
       <Routes>
@@ -49,6 +55,9 @@ const Main = ({ user, teams, notification }) => {
         <Route path='/addtraining' element={<TrainingForm notification={notification} />} />
         <Route path='/userinfo' element={<UserInfoForm />} />
         <Route path='/updateinfo' element={<UpdateInfo user={user} />} />
+        {user.username === 'admin' &&
+          <Route path='/admin' element={<AdminPage />} />
+        }
       </Routes>
     </div>
   )
