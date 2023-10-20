@@ -30,4 +30,9 @@ router.put('/:id/messages', async (req, res) => {
   return res.json(team)
 })
 
+router.delete('/:id', async (req, res) => {
+  await Team.destroy({ where: { id: req.params.id}})
+  return res.status(200).end()
+})
+
 module.exports = router

@@ -51,4 +51,9 @@ router.post('/', async (req, res) => {
   return res.json(user)
 })
 
+router.delete('/:id', async (req, res) => {
+  await User.destroy({ where: { id: req.params.id}})
+  return res.status(200).end()
+})
+
 module.exports = router
