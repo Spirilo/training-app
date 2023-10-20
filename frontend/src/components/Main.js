@@ -14,7 +14,7 @@ import TeamInfo from './TeamInfo'
 import { setUser } from '../reducers/userReducer'
 
 import './Main.css'
-import AdminPage from './AdminPage'
+import AdminPage from './admin/AdminPage'
 
 const Main = ({ user, teams, notification }) => {
   const dispatch = useDispatch()
