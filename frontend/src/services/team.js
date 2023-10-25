@@ -7,6 +7,11 @@ const getAll = async () => {
   return res.data
 }
 
+const addTeam = async (team) => {
+  const res = await axios.post(baseUrl, team)
+  return res.data
+}
+
 const removeTeam = async (id) => {
   await axios.delete(`${baseUrl}/${id}`)
 }
@@ -16,4 +21,4 @@ const addMessage = async (id, msg) => {
   await axios.put(`${baseUrl}/${id}/messages`, msg)
 }
 
-export default { getAll, addMessage, removeTeam }
+export default { getAll, addTeam, addMessage, removeTeam }

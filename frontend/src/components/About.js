@@ -1,6 +1,10 @@
 import './About.css'
 
 const About = ({ user }) => {
+  if(user.username === 'admin') {
+    return <div className='main'>Welcome admin. Click on adminpage to make changes.</div>
+  }
+
   if(user.userInfo === null) {
     return(
       <div className='main'>

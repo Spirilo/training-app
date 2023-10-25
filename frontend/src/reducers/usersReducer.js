@@ -12,18 +12,28 @@ const usersSlice = createSlice({
       state = action.payload
       return state
     },
+    addUser(state, action) {
+      state.push(action.payload)
+    },
     dltUser(state, action) {
       return state.filter(u => u.id !== action.payload)
     }
   }
 })
 
-export const { setUsers, dltUser } = usersSlice.actions
+export const { setUsers, addUser, dltUser } = usersSlice.actions
 
 export const getUsers = () => {
   return async dispatch => {
     const users = await userService.getAll()
     dispatch(setUsers(users))
+  }
+}
+
+export const createUser = (user) => {
+  return async dispatch => {
+    const added = await userService.createUser(user)
+    dispatch(addUser(added))
   }
 }
 

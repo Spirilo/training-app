@@ -13,6 +13,9 @@ const teamsSlice = createSlice({
       state = action.payload
       return state
     },
+    addTeam(state, action) {
+      state.push(action.payload)
+    },
     addMember(state, action) {
       const { user, id } = action.payload
       const teamToAdd = state.find(t => t.id === id)
@@ -35,12 +38,19 @@ const teamsSlice = createSlice({
   }
 })
 
-export const { setTeams, addMember, dltMember, addMsg, dltTeam } = teamsSlice.actions
+export const { setTeams, addTeam, addMember, dltMember, addMsg, dltTeam } = teamsSlice.actions
 
 export const getTeams = () => {
   return async dispatch => {
     const teams = await teamSercive.getAll()
     dispatch(setTeams(teams))
+  }
+}
+
+export const createTeam = (team) => {
+  return async dispatch => {
+    const added = await teamSercive.addTeam(team)
+    dispatch(addTeam(added))
   }
 }
 

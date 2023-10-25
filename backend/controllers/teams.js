@@ -16,6 +16,7 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
+  console.log(req.body)
   const team = await Team.create({ ...req.body })
   return res.json(team)
 })

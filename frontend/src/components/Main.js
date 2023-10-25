@@ -34,14 +34,17 @@ const Main = ({ user, teams, notification }) => {
   return(
     <div>
       <div className='navbar'>
-        <Link to="/">FitFlow</Link>
-        <Link to="/user">Profile</Link>
-        <Link to="/teams">Teams</Link>
-        <Link to="/traininglist">Workouts</Link>
-        <Link to="/addtraining">Add a workout</Link>
-        {user.username === 'admin' &&
+        {user.username === 'admin' ?
           <div>
             <Link to="/admin">Admingpage</Link>
+          </div>
+        :
+          <div>
+            <Link to="/">FitFlow</Link>
+            <Link to="/user">Profile</Link>
+            <Link to="/teams">Teams</Link>
+            <Link to="/traininglist">Workouts</Link>
+            <Link to="/addtraining">Add a workout</Link>
           </div>
         }
         <button onClick={logout}>Logout {user.username}</button>
