@@ -17,4 +17,8 @@ const createUser = async user => {
   return res.data
 }
 
-export default { getAll, getByUsername, createUser }
+const deleteUser = async id => {
+  await axios.delete(`${baseUrl}/${id}`)
+}
+
+export default { getAll, getByUsername, createUser, deleteUser }
