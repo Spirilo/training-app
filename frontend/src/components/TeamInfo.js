@@ -37,16 +37,16 @@ const TeamInfo = ({ team, user }) => {
   }
 
   return(
-    <div>
-    <div className='team-container'>
-      <h3 className='team-name'>
-        {team.name}
-        {member ?
-          <button onClick={leaveTeam}>Poistu</button>
-        :
-          <button onClick={joinTeam}>Liity</button>
-        }
-      </h3>
+    <div className='flex-container'>
+      <div className='team-container'>
+        <h3 className='team-name'>
+          {team.name}
+          {member ?
+            <button onClick={leaveTeam}>Poistu</button>
+          :
+            <button onClick={joinTeam}>Liity</button>
+          }
+        </h3>
       <div className='team-info'>
         <p>Info/ {team.info}</p>
         Members:

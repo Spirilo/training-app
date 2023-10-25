@@ -1,3 +1,7 @@
+.flex-container {
+  display: flex;
+}
+
 .team-container {
   max-width: 200px;
   padding: 20px;
@@ -36,8 +40,6 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   font-family: 'Trebuchet MS';
-  margin-left: 243px; 
-  margin-top: -288px;
 }
 
 .messages-name {
@@ -55,7 +57,7 @@
 }
 
 .messages-container button {
-  width: 20%;
+  width: 100%;
   padding: 10px;
   background-color: #007bff;
   color: #fff;

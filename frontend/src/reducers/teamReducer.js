@@ -49,6 +49,7 @@ export const getTeams = () => {
 
 export const createTeam = (team) => {
   return async dispatch => {
+    console.log(team)
     const added = await teamSercive.addTeam(team)
     dispatch(addTeam(added))
   }
