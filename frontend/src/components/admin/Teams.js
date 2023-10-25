@@ -4,8 +4,6 @@ import { deleteTeam } from "../../reducers/teamReducer"
 const Teams = () => {
   const teams = useSelector(state => state.teams)
 
-  console.log(teams)
-
   const dispatch = useDispatch()
 
   const dlt = (id) => {
