@@ -9,6 +9,9 @@ router.post('/', tokenExtractor, async (req, res) => {
   if(!type) {
     return res.status(400).send({ error: 'Workout must have type!' })
   }
+  if(typeof duration !== 'number') {
+    return res.status(400).send({ error: 'Duration must be number!' })
+  }
   if(duration < 1) {
     return res.status(400).send({ error: 'Workout must have positive duration!' })
   }

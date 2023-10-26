@@ -6,7 +6,7 @@ const Team = ({ name, count, handleClick }) => {
   return(
     <li>
       <p>{name}. Members: {count}</p>
-      <button onClick={() => handleClick()}>Avaa</button>
+      <button onClick={() => handleClick()}>Open</button>
     </li>
   )
 }

@@ -25,7 +25,7 @@ const UserInfoForm = () => {
     }
     dispatch(addUserInfo(userInfo))
 
-    navigate('/')
+    navigate('/user')
   }
 
   return(

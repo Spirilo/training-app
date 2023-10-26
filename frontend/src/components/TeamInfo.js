@@ -42,9 +42,9 @@ const TeamInfo = ({ team, user }) => {
         <h3 className='team-name'>
           {team.name}
           {member ?
-            <button onClick={leaveTeam}>Poistu</button>
+            <button onClick={leaveTeam}>Leave team</button>
           :
-            <button onClick={joinTeam}>Liity</button>
+            <button onClick={joinTeam}>Join team</button>
           }
         </h3>
       <div className='team-info'>

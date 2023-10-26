@@ -17,7 +17,6 @@ const removeTeam = async (id) => {
 }
 
 const addMessage = async (id, msg) => {
-  console.log(id, msg)
   await axios.put(`${baseUrl}/${id}/messages`, msg)
 }
 
