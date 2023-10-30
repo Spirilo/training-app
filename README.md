@@ -10,8 +10,8 @@ React, Node.js, PostgreSQL, CSS and Docker.
 - On other console run `docker-compose up` at the root (make sure you have docker installed, this will init the database and serve as a database to the app)
 - On other console `cd backend` and `npm install`
 - After that you need to make .env file on backend folder with following data:
-  DATABASE_URL=postgres://postgres:mysecretpassword@localhost:5432/postgres
-  PORT=3001
+  DATABASE_URL=postgres://postgres:mysecretpassword@localhost:5432/postgres     
+  PORT=3001     
   SECRET=whateveryouwanttoputhere
 - After that you can start both server and client
 - Just run `npm start` in ./backend and ./frontend, and make sure to have docker container running (it will be if you ran docker-compose up earlier)
